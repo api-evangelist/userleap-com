@@ -1,0 +1,22 @@
+generated: '2026-10-21'
+method: none
+source:
+- https://zapier.com/apps/userleap-com/integrations
+- https://zapier.com/apps/userleap/integrations
+- https://zapier.com/apps/sprig/integrations
+- https://n8n.io/integrations/userleap-com/
+- https://n8n.io/integrations/userleap/
+- https://composio.dev/toolkits/userleap-com
+- https://monid.ai/tools/userleap-com
+checked:
+- https://composio.dev/toolkits/userleap-com
+- https://monid.ai/tools/userleap-com
+- https://n8n.io/integrations/userleap-com/
+- https://n8n.io/integrations/userleap/
+- https://zapier.com/apps/sprig/integrations
+- https://zapier.com/apps/userleap-com/integrations
+- https://zapier.com/apps/userleap/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []

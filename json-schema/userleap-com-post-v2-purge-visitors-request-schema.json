@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/userleap-com/main/json-schema/userleap-com-post-v2-purge-visitors-request-schema.json",
+  "title": "PostV2PurgeVisitorsRequest",
+  "x-generated": "2026-10-21",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/userleap-com-openapi-generated.yml#/components/schemas/PostV2PurgeVisitorsRequest",
+  "type": "object",
+  "properties": {
+    "delaySeconds": {
+      "type": "integer",
+      "description": "Seconds to wait before starting visitor data purging. This can be used as a safety measure in case the request needs to be canceled."
+    },
+    "emails": {
+      "type": "array",
+      "description": "List of emails for which visitor data will be purged."
+    },
+    "userIds": {
+      "type": "array",
+      "description": "List of user IDs (external user IDs) for which visitor data will be purged."
+    },
+    "visitorIds": {
+      "type": "array",
+      "description": "List of visitor IDs for which visitor data will be purged."
+    }
+  }
+}

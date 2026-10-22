@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/userleap-com/main/json-schema/userleap-com-post-v2-users-request-schema.json",
+  "title": "PostV2UsersRequest",
+  "x-generated": "2026-10-21",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/userleap-com-openapi-generated.yml#/components/schemas/PostV2UsersRequest",
+  "type": "object",
+  "properties": {
+    "attributes": {
+      "type": "object",
+      "description": "Key value pairs of attributes"
+    },
+    "attributes.attributeName": {
+      "type": "string",
+      "description": "Attribute name and value. Attributes limited to total of 100 values"
+    },
+    "emailAddress": {
+      "type": "string",
+      "description": "Valid Email to track visitor by"
+    },
+    "events": {
+      "type": "array"
+    },
+    "events[].event": {
+      "type": "string",
+      "description": "Name of event already being tracked in Sprig"
+    },
+    "events[].timestamp": {
+      "type": "integer",
+      "description": "Unix timestamp in milliseconds"
+    },
+    "userId": {
+      "type": "string",
+      "description": "Existing or desired id for visitor"
+    }
+  },
+  "required": [
+    "userId"
+  ]
+}

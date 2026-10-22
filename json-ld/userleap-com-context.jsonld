@@ -1,0 +1,71 @@
+{
+  "@context": {
+    "@vocab": "https://userleap.com/schema#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "userleap": "https://userleap.com/schema#",
+    "GetV1ResponsesResponse": "userleap:GetV1ResponsesResponse",
+    "cursor": {
+      "@id": "userleap:cursor",
+      "@type": "xsd:string"
+    },
+    "data": {
+      "@id": "userleap:data",
+      "@container": "@list"
+    },
+    "GetV1SurveysResponse": "userleap:GetV1SurveysResponse",
+    "GetV1ThemesResponse": "userleap:GetV1ThemesResponse",
+    "PostV2PurgeVisitorsRequest": "userleap:PostV2PurgeVisitorsRequest",
+    "delaySeconds": {
+      "@id": "userleap:delaySeconds",
+      "@type": "xsd:integer"
+    },
+    "emails": {
+      "@id": "userleap:emails",
+      "@container": "@list"
+    },
+    "userIds": {
+      "@id": "userleap:userIds",
+      "@container": "@list"
+    },
+    "visitorIds": {
+      "@id": "userleap:visitorIds",
+      "@container": "@list"
+    },
+    "PostV2PurgeVisitorsResponse": "userleap:PostV2PurgeVisitorsResponse",
+    "requestId": {
+      "@id": "userleap:requestId",
+      "@type": "xsd:string"
+    },
+    "PostV2UsersRequest": "userleap:PostV2UsersRequest",
+    "attributes": {
+      "@id": "userleap:attributes"
+    },
+    "attributes.attributeName": {
+      "@id": "userleap:attributes.attributeName",
+      "@type": "xsd:string"
+    },
+    "emailAddress": {
+      "@id": "userleap:emailAddress",
+      "@type": "xsd:string"
+    },
+    "events": {
+      "@id": "userleap:events",
+      "@container": "@list"
+    },
+    "userId": {
+      "@id": "userleap:userId",
+      "@type": "xsd:string"
+    },
+    "PostV2UsersResponse": "userleap:PostV2UsersResponse",
+    "GetV2UsersUseridResponse": "userleap:GetV2UsersUseridResponse"
+  },
+  "@type": "schema:Dataset",
+  "schema:name": "Sprig API JSON-LD context",
+  "schema:description": "A JSON-LD @context for the objects Sprig's own API contract declares: one class per component schema, one property per declared field, typed from the contract. Derived by script (derive-json-ld.py, 2026-10-21) from openapi/_ae-authored/userleap-com-openapi-generated.yml.",
+  "dcterms:created": "2026-10-21",
+  "dcterms:source": [
+    "openapi/_ae-authored/userleap-com-openapi-generated.yml"
+  ]
+}

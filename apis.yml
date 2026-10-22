@@ -1,25 +1,121 @@
 aid: userleap-com
+
 name: Sprig
-description: 'Sprig is a company surfaced via the API Evangelist harvest backlog (source: vc-portfolio;
-  backed by accel) and added to the network as a stub for full-pipeline profiling.'
+
+image: https://cdn.prod.website-files.com/651206cc884d0caef0f4c520/69c2fd5f6882434c7781fd39_meta-img-new.png
+
+description: Sprig offers an enterprise survey platform that uses AI‑driven research agents to design, field, analyze, and synthesize studies.
+  The service enables enterprise research teams to run adaptive surveys across email, panels, web apps, and mobile apps, delivering statistical
+  analysis and report generation without manual configuration. Sprig’s agents support experience measurement, market and consumer insights, journey
+  and behavioral research, and concept testing for product and market discovery.
+
 url: https://raw.githubusercontent.com/api-evangelist/userleap-com/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:vc-portfolio
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-21 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-21'
+
 modified: '2026-10-21'
+
 tags:
-- Company
-apis: []
+- Survey
+- Enterprise Research
+- AI Agents
+- Market Insights
+- Customer Experience
+- Prototype Testing
+- Omnichannel Distribution
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
-x-backed-by:
-- accel
+
 common:
+- type: Spectral
+  url: rules/userleap-com-rules.yml
+- type: JSONLD
+  url: json-ld/userleap-com-context.jsonld
+- type: Vocabulary
+  url: vocabulary/userleap-com-vocabulary.yml
+- type: Webhooks
+  url: asyncapi/userleap-com-webhooks.yml
+- type: DataModel
+  url: data-model/userleap-com-data-model.yml
+- type: ChangeLog
+  url: changelog/userleap-com-changelog.yml
+- type: Conformance
+  url: conformance/userleap-com-conformance.yml
+- type: LLMsTxt
+  url: llms/userleap-com-llms.txt
+- type: AgentCard
+  url: a2a/userleap-com-a2a.yml
+- type: WellKnown
+  url: well-known/userleap-com-well-known.yml
+- type: Hosts
+  url: hosts/userleap-com-hosts.yml
+- type: Vendors
+  url: vendors/userleap-com-vendors.yml
+- type: Webhooks
+  url: https://sprig.com/integrations/webhooks
+- type: PrivacyPolicy
+  url: https://sprig.com/privacy-policy
+- type: Blog
+  url: https://sprig.com/blog
+- type: GettingStarted
+  url: https://docs.sprig.com/docs/welcome-to-sprig/quick-start-guide/index
+- type: Documentation
+  url: https://docs.userleap.com/
+- type: DomainSecurity
+  url: security/userleap-com-domain-security.yml
 - type: Website
   url: http://userleap.com/
+
+apis:
+- aid: userleap-com:userleap-com-api
+  name: Sprig API
+  description: 'Sprig API as documented publicly: 8 operations. Contract generated from the documentation by API Evangelist (2026-10-21); not
+    the provider''s own document.'
+  humanURL: https://docs.sprig.com/reference/sprig-api/overview.md
+  properties:
+  - type: OpenAPI
+    url: openapi/_ae-authored/userleap-com-openapi-generated.yml
+    x-provenance: generated
+  - type: JSONSchema
+    url: json-schema/userleap-com-get-v1-themes-response-schema.json
+  - type: JSONSchema
+    url: json-schema/userleap-com-post-v2-users-request-schema.json
+  - type: JSONSchema
+    url: json-schema/userleap-com-post-v2-purge-visitors-request-schema.json
+  - type: JSONSchema
+    url: json-schema/userleap-com-post-v2-users-response-schema.json
+  - type: JSONSchema
+    url: json-schema/userleap-com-get-v2-users-userid-response-schema.json
+  - type: JSONSchema
+    url: json-schema/userleap-com-get-v1-responses-response-schema.json
+
+x-backed-by:
+- accel
+
+x-coverage:
+  state: unreadable
+  reason: no-machine-readable-spec
+  detail: Sprig provides HTML documentation but no machine‑readable OpenAPI/GraphQL/AsyncAPI spec was found.
+  evidence:
+  - url: https://sprig.com/
+    status: 200
+  checked: '2026-10-21'
+x-enrichment:
+  date: '2026-10-21'
+  status: enriched
+  artifacts_added: 28
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local

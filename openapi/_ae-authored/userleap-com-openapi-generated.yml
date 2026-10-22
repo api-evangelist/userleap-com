@@ -1,0 +1,510 @@
+openapi: 3.1.0
+info:
+  title: Sprig API
+  version: '2026-10-21'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-21: 8 operation(s) read from 8 public documentation page(s) (each operation
+    names its page in x-source). This is not the provider''s published contract; Sprig has published no machine-readable contract that the pipeline
+    could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 2
+    documentation: 6
+    pages-with-code: 2
+    pages-read: 8
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-21'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://docs.sprig.com/reference/sprig-api/overview.md
+  - https://docs.sprig.com/reference/sprig-api/v2/post-user-v2-1.md
+  - https://docs.sprig.com/reference/sprig-api/v1/get-v1-themes-1.md
+  - https://docs.sprig.com/reference/sprig-api/v1/get-v1-surveys-1.md
+  - https://docs.sprig.com/reference/sprig-api/v1/get-v1-responses-1.md
+  - https://docs.sprig.com/reference/sprig-api/v2/get-v2-users-userid-1.md
+  - https://docs.sprig.com/reference/sprig-api/v2/post-v2-purge-visitors-1.md
+  - https://docs.sprig.com/docs/integrations/data-destinations/webhooks.md
+paths:
+  /96255364-4d38-4be5-a6e4-795881dc5b6b:
+    post:
+      operationId: post_96255364_4d38_4be5_a6e4_795881dc5b6b
+      tags:
+      - 96255364 4D38 4Be5 A6E4 795881Dc5B6B
+      summary: POST /96255364-4d38-4be5-a6e4-795881dc5b6b
+      x-source: https://docs.sprig.com/docs/integrations/data-destinations/webhooks.md
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl -X ''POST'' ''https://webhook.site/96255364-4d38-4be5-a6e4-795881dc5b6b?'' -H ''connection: close'' -H ''host: webhook.site''
+          -H ''content-length: 92'' -H ''user-agent: axios/0.21.2'' -H ''authorization: Bearer APIsecret'' -H ''content-type: application/json''
+          -H ''accept: application/json, text/plain, */*'' -d $''{"id":1,"environmentId":"abc123","surveyId":1,"surveyName":"TEST_SURVEY","eventType":"TEST"}''
+
+          ```'
+  /v1/responses:
+    get:
+      operationId: get_v1_responses
+      tags:
+      - Responses
+      summary: Retrieve Responses
+      description: Use this endpoint to retrieve responses from your studies. This endpoint allows you to retrieve up to 1000 responses at a time.
+      x-source: https://docs.sprig.com/reference/sprig-api/v1/get-v1-responses-1.md
+      parameters:
+      - name: start
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The earliest creation data for a generated theme to return, represented as milliseconds from epoch time
+      - name: end
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The latest creation date for a generated theme to return, represented as milleseconds from epoch time
+      - name: cursor
+        in: query
+        required: false
+        schema:
+          type: string
+        description: A Base64 encoded string representing an opaque cursor position
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Specific number of results to return
+      - name: sid
+        in: query
+        required: false
+        schema:
+          type: string
+        description: An integer id for a specific Survey
+      - name: Authorization
+        in: header
+        required: true
+        schema:
+          type: string
+        description: Bearer YOUR_API_KEY
+      - name: with_snapshots
+        in: query
+        required: false
+        schema:
+          type: string
+        description: true/false(default). If true, the API will return visitorSnapshots, which contains all events, attributes, triggeringEvent,
+          and eventProperties set for the visitor at the time of survey delivery.
+      - name: with_urls
+        in: query
+        required: false
+        schema:
+          type: string
+        description: true/false (default). If true, the API will return the page URL from which the survey was taken.
+      - name: with_meta
+        in: query
+        required: false
+        schema:
+          type: string
+        description: true/false (default). If true, the API will return the metadata JSON blob containing details available from the client.
+      - name: with_custom_metadata
+        in: query
+        required: false
+        schema:
+          type: string
+        description: true/false (default). If true, the API will return any custom metadata associated with the response (applicable to link platform
+          surveys only).
+      - name: with_deleted_responses
+        in: query
+        required: false
+        schema:
+          type: string
+        description: true/false (default). If true, the API will return the responses that have been previously deleted.
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV1ResponsesResponse'
+      x-evidence:
+        kind: documentation
+  /v1/surveys:
+    get:
+      operationId: get_v1_surveys
+      tags:
+      - Surveys
+      summary: Retrieve Surveys
+      description: Studies were formerly surveys. This endpoint allows for the export of study configurations. The name will eventually change
+        to Study, but at this time survey will be accepted anywhere study appears in the API. This endpoint allows you retrieve up to 1000 surveys
+        at a time.
+      x-source: https://docs.sprig.com/reference/sprig-api/v1/get-v1-surveys-1.md
+      parameters:
+      - name: start
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The earliest creation data for a generated theme to return, represented as milliseconds from epoch time
+      - name: end
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The latest creation date for a generated theme to return, represented as milleseconds from epoch time
+      - name: cursor
+        in: query
+        required: false
+        schema:
+          type: string
+        description: A Base64 encoded string representing an opaque cursor position
+      - name: status
+        in: query
+        required: false
+        schema:
+          type: string
+        description: One or many of (IN_PROGRESS, PAUSED, COMPLETED, DRAFT, ARCHIVED, NEW). Can be passed as ?status=PAUSED,COMPLETED, ?status[]=PAUSED&status[]=COMPLETED
+          or ?status=PAUSED&status=COMPLETED
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: string
+        description: Specific number of results to return
+      - name: Authorization
+        in: header
+        required: true
+        schema:
+          type: string
+        description: Bearer YOUR_API_KEY
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV1SurveysResponse'
+      x-evidence:
+        kind: documentation
+  /v1/themes:
+    get:
+      operationId: get_v1_themes
+      tags:
+      - Themes
+      summary: Retrieve Themes
+      description: Use this endpoint to retrieve themes, along with the responses that are associated with each theme, from your studies.
+      x-source: https://docs.sprig.com/reference/sprig-api/v1/get-v1-themes-1.md
+      parameters:
+      - name: start
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The earliest creation data for a generated theme to return, represented as milliseconds from epoch time
+      - name: end
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The latest creation date for a generated theme to return, represented as milleseconds from epoch time
+      - name: cursor
+        in: query
+        required: false
+        schema:
+          type: string
+        description: A Base64 encoded string representing an opaque cursor position
+      - name: sid
+        in: query
+        required: false
+        schema:
+          type: string
+        description: An integer id for a specific Survey
+      - name: Authorization
+        in: header
+        required: true
+        schema:
+          type: string
+        description: Bearer YOUR_API_KEY
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV1ThemesResponse'
+      x-evidence:
+        kind: documentation
+  /v1/users/{userid}:
+    get:
+      operationId: get_v1_users_userid
+      tags:
+      - Users
+      summary: GET /v1/users/{userId}
+      x-source: https://docs.sprig.com/reference/sprig-api/overview.md
+      parameters:
+      - name: userid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl https://api.sprig.com/v1/users/1234567890  -H "Authorization: API-Key YOUR_API_KEY"
+
+          ```'
+  /v2/purge/visitors:
+    post:
+      operationId: post_v2_purge_visitors
+      tags:
+      - Purge
+      summary: Purge Visitors
+      description: 'The Purge Visitors API helps teams comply with end-user bulk data deletion requests mandated by laws like GDPR and CCPA. This
+        endpoint will delete users and all related user data identified by a set of emails, visitor IDs, or user IDs.
+
+
+        Purge requests default to being processed 10 days after submission, however this delay can be configured via the delaySeconds parameter.
+        The endpoint is limited to 100 visitor deletions per request.
+
+
+        One of email, userId, or visitorId parameter is required to identify the user for data deletion.'
+      x-source: https://docs.sprig.com/reference/sprig-api/v2/post-v2-purge-visitors-1.md
+      parameters:
+      - name: Authorization
+        in: header
+        required: true
+        schema:
+          type: string
+        description: Bearer YOUR_API_KEY
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostV2PurgeVisitorsRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostV2PurgeVisitorsResponse'
+      x-evidence:
+        kind: documentation
+  /v2/users:
+    post:
+      operationId: post_v2_users
+      tags:
+      - Users
+      summary: Upsert a User
+      description: 'Endpoint facilitating the programatic upsertion of a user.
+
+
+        Users must be upserted 1 at a time.
+
+
+        Events created for this user are for historical tracking purposes. Any event tied to a user through this endpoint will not trigger a study
+        through Sprig''s SDK.
+
+
+        Attributes and attribute values can be created and tied to a user through this endpoint.'
+      x-source: https://docs.sprig.com/reference/sprig-api/v2/post-user-v2-1.md
+      parameters:
+      - name: Authorization
+        in: header
+        required: true
+        schema:
+          type: string
+        description: API-Key YOUR_API_KEY
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostV2UsersRequest'
+      responses:
+        '202':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostV2UsersResponse'
+      x-evidence:
+        kind: documentation
+  /v2/users/{userid}:
+    get:
+      operationId: get_v2_users_userid
+      tags:
+      - Users
+      summary: Retrieve a User
+      description: 'Endpoint that allows the retrieval of a visitor based on a known User ID.
+
+
+        This endpoint can only recover visitors with user IDs, so please ensure your Sprig implementation has user tracking configured correctly
+        based on your SDK installation: /docs/Installation/introduction-web/index
+
+
+        This endpoint will retrieve visitor info, a list of attributes tied to the visitor, and a list of events with relevant filter criteria.'
+      x-source: https://docs.sprig.com/reference/sprig-api/v2/get-v2-users-userid-1.md
+      parameters:
+      - name: userid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: Authorization
+        in: header
+        required: true
+        schema:
+          type: string
+        description: API-Key YOUR_API_KEY
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetV2UsersUseridResponse'
+      x-evidence:
+        kind: documentation
+components:
+  schemas:
+    GetV1ResponsesResponse:
+      type: object
+      properties:
+        cursor:
+          type: string
+        data:
+          type: array
+          description: Array of response objects
+    GetV1SurveysResponse:
+      type: object
+      properties:
+        cursor:
+          type: string
+        data:
+          type: array
+          description: Array of survey objects
+    GetV1ThemesResponse:
+      type: object
+      properties:
+        cursor:
+          type: string
+        data:
+          type: array
+          description: 'Array of theme objects (minimum 1 item, unique items). Each object contains the following fields:'
+        data[].createdAt:
+          type: string
+        data[].id:
+          type: number
+        data[].questionId:
+          type: number
+        data[].questionText:
+          type: string
+        data[].questionType:
+          type: string
+        data[].response:
+          type: string
+        data[].responseGroupUid:
+          type: string
+        data[].surveyId:
+          type: number
+        data[].theme:
+          type: string
+        data[].themeDescription:
+          type: string
+        data[].updatedAt:
+          type: string
+        data[].visitorId:
+          type: number
+    PostV2PurgeVisitorsRequest:
+      type: object
+      properties:
+        delaySeconds:
+          type: integer
+          description: Seconds to wait before starting visitor data purging. This can be used as a safety measure in case the request needs to
+            be canceled.
+        emails:
+          type: array
+          description: List of emails for which visitor data will be purged.
+        userIds:
+          type: array
+          description: List of user IDs (external user IDs) for which visitor data will be purged.
+        visitorIds:
+          type: array
+          description: List of visitor IDs for which visitor data will be purged.
+    PostV2PurgeVisitorsResponse:
+      type: object
+      properties:
+        requestId:
+          type: string
+    PostV2UsersRequest:
+      type: object
+      properties:
+        attributes:
+          type: object
+          description: Key value pairs of attributes
+        attributes.attributeName:
+          type: string
+          description: Attribute name and value. Attributes limited to total of 100 values
+        emailAddress:
+          type: string
+          description: Valid Email to track visitor by
+        events:
+          type: array
+        events[].event:
+          type: string
+          description: Name of event already being tracked in Sprig
+        events[].timestamp:
+          type: integer
+          description: Unix timestamp in milliseconds
+        userId:
+          type: string
+          description: Existing or desired id for visitor
+      required:
+      - userId
+    PostV2UsersResponse:
+      type: object
+      properties:
+        '202':
+          type: string
+          description: Accepted
+        '400':
+          type: string
+          description: Bad Request
+        '422':
+          type: string
+          description: Unprocessable Entity
+        '500':
+          type: string
+          description: Something went wrong on Sprig's side. These are very rare :)
+    GetV2UsersUseridResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: OK
+        '404':
+          type: string
+          description: Not Found
+        '500':
+          type: string
+          description: Something went wrong on Sprig's side. These are very rare :)
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: Authorization
+security:
+- apiKey: []
+tags:
+- name: 96255364 4D38 4Be5 A6E4 795881Dc5B6B
+- name: Purge
+- name: Responses
+- name: Surveys
+- name: Themes
+- name: Users

@@ -1,0 +1,26 @@
+generated: '2026-10-21'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://docs.sprig.com/docs/integrations/data-destinations/webhooks.md
+sources:
+- https://docs.sprig.com/docs/integrations/data-destinations/webhooks.md
+- https://sprig.com/integrations/webhooks
+- https://docs.sprig.com/docs/shared-study-foundations/events/index.md
+- https://docs.sprig.com/docs/shared-study-foundations/events/code-events.md
+description: 'Sprig supports webhooks triggered by the following events:'
+events:
+- event: Answer submitted
+  description: A user submits an answer to a specific question in a study.
+- event: Study submitted
+  description: A user completes and submits a study.
+- event: Study sent
+  description: Sprig has triggered and delivered a study.
+- event: Study seen
+  description: A user has viewed a study.
+- event: Theme identified
+  description: Sprig identifies a new theme associated with a study.
+- event: Study status changed
+  description: A study becomes paused, completed, etc.
+delivery:
+  auth: Bearer token (provided in the Authorization header as 'Bearer <API secret>')
+docs: https://docs.sprig.com/docs/integrations/data-destinations/webhooks.md

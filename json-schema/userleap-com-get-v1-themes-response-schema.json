@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/userleap-com/main/json-schema/userleap-com-get-v1-themes-response-schema.json",
+  "title": "GetV1ThemesResponse",
+  "x-generated": "2026-10-21",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/userleap-com-openapi-generated.yml#/components/schemas/GetV1ThemesResponse",
+  "type": "object",
+  "properties": {
+    "cursor": {
+      "type": "string"
+    },
+    "data": {
+      "type": "array",
+      "description": "Array of theme objects (minimum 1 item, unique items). Each object contains the following fields:"
+    },
+    "data[].createdAt": {
+      "type": "string"
+    },
+    "data[].id": {
+      "type": "number"
+    },
+    "data[].questionId": {
+      "type": "number"
+    },
+    "data[].questionText": {
+      "type": "string"
+    },
+    "data[].questionType": {
+      "type": "string"
+    },
+    "data[].response": {
+      "type": "string"
+    },
+    "data[].responseGroupUid": {
+      "type": "string"
+    },
+    "data[].surveyId": {
+      "type": "number"
+    },
+    "data[].theme": {
+      "type": "string"
+    },
+    "data[].themeDescription": {
+      "type": "string"
+    },
+    "data[].updatedAt": {
+      "type": "string"
+    },
+    "data[].visitorId": {
+      "type": "number"
+    }
+  }
+}

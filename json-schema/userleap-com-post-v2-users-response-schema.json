@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/userleap-com/main/json-schema/userleap-com-post-v2-users-response-schema.json",
+  "title": "PostV2UsersResponse",
+  "x-generated": "2026-10-21",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/userleap-com-openapi-generated.yml#/components/schemas/PostV2UsersResponse",
+  "type": "object",
+  "properties": {
+    "202": {
+      "type": "string",
+      "description": "Accepted"
+    },
+    "400": {
+      "type": "string",
+      "description": "Bad Request"
+    },
+    "422": {
+      "type": "string",
+      "description": "Unprocessable Entity"
+    },
+    "500": {
+      "type": "string",
+      "description": "Something went wrong on Sprig's side. These are very rare :)"
+    }
+  }
+}
